@@ -18,16 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <div className="container mx-auto">
-        <div className="flex justify-center text-blue-500 p-6 gap-6">
-            <Link href='/routerhome'>Home</Link> &nbsp;
-            <Link href='/routerhome/visitior'>Visitor</Link>
-        </div>
-        <div className="flex gap-6">
-            {team}
-            {analytics}
-        </div>
-    </div>
+      <div className="container mx-auto">
+          <div className="flex justify-center text-blue-500 p-6 gap-6">
+              <Link href='/routerhome'>Home</Link> &nbsp;
+              <Link href='/routerhome/visitior'>Visitor</Link>
+          </div>
+          <div className="flex gap-6">
+              {team}
+              {analytics}
+          </div>
+      </div>
       {children}
     </>
   );

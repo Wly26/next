@@ -15,7 +15,6 @@ export async function generateMetadata(
     const id = (await params).id
     return {
       title: 'generateMetadata' + id,
-
     }
   }
 

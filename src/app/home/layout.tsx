@@ -5,7 +5,7 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      home 根目录页面
+      layout-home根目录页面
       {children}
     </div>
   );
