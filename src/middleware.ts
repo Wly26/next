@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   console.log(pathname);
-  if (pathname === "/") {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
+  // if (pathname === "/") {
+  //   // 路由重定向
+  //   return NextResponse.redirect(new URL("/login", request.url));
+  // }
 }
