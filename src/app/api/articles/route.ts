@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/db";
 
+// 保存在db.json(自动生成)中,
+// apipost中，访问地址：
+// http://localhost:3000/api/articles  // 所有数据
+// http://localhost:3000/api/articles?pagenum=2&pagesize=2&query=123 // 分页+搜索 查询
+
 // GET => /api/articles
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
@@ -45,7 +50,14 @@ export async function GET(request: NextRequest) {
 // 		"hello": "world"
 // 	}
 // }
-// 保存在db.json中
+
+
+// apipost中，http://localhost:3000/api/articles
+// body中的json格式
+// {
+//     "title":"123",
+//     "content":"123123"
+// }
 export async function POST(request: Request) {
     const data = await request.json();
     await db.update(({ posts }) => posts.push({

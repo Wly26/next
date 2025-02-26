@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import db from "@/db";
+
+// apipost中，访问地址：http://localhost:3000/api/articles，发请求：
 interface IParams {
     id: string;
 }
 
+// apipost中，访问地址：http://localhost:3000/api/articles，发请求：
+// http://localhost:3000/api/articles/znbdrdkw
 // DELETE => /api/articles/:id
 export async function DELETE(request: Request, { params }: { params: IParams}) {
     await db.update(({ posts }) =>{
@@ -17,6 +21,13 @@ export async function DELETE(request: Request, { params }: { params: IParams}) {
     });
 }
 
+// apipost中，访问地址：http://localhost:3000/api/articles，发请求：
+// http://localhost:3000/api/articles/8hqqqkyo
+// body中的json格式
+// {
+//     "title":"555",
+//     "content":"666"
+// }
 // PATCH => /api/articles/:id
 export async function PATCH(request: Request, { params }: { params: IParams }) {
     const data = await request.json();
@@ -32,6 +43,9 @@ export async function PATCH(request: Request, { params }: { params: IParams }) {
       data: db.data.posts[idx],
     });
 }
+
+// apipost中，访问地址：http://localhost:3000/api/articles，发请求：
+// http://localhost:3000/api/articles/znbdrdkw
 // GET => /api/articles/:id
 export async function GET(request: Request, { params }: { params: IParams }) {
   const data = db.data.posts.find((post) => post.id === params.id);

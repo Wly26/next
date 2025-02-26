@@ -32,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <p>layout-根目录页面</p>
+        {/* antd UI解决闪烁问题 */}
         <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>

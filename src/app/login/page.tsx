@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import "@ant-design/v5-patch-for-react-19";
 import type { FormProps } from "antd";
 import { Button, Checkbox, Form, Input } from "antd";
 
@@ -7,9 +8,9 @@ type FieldType = {
   login?: string;
   password?: string;
 };
-
+// 打印数据
 const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-  // console.log("Success:", values);
+  console.log("Success:", values);
   const r = await fetch("/api/login", {
     method: "POST",
     headers: {

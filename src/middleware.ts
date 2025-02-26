@@ -8,3 +8,7 @@ export function middleware(request: NextRequest) {
   //   return NextResponse.redirect(new URL("/login", request.url));
   // }
 }
+// 以下路径会执行中间件
+export const config = {
+  matcher: ["/", "/login", "/register", "/routerblog", "/routerblog/:id"],
+};

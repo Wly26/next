@@ -14,6 +14,7 @@ import db from "@/db";
 // 		"hello": "world"
 // 	}
 // }
+
 // 保存在db.json中
 export async function POST(request: Request) {
     const {login,password} = await request.json();
