@@ -13,7 +13,7 @@ export default function ClientComponents({
     };
     return (
       <div>
-        <div>Client Components</div>·
+        <div>Client Components</div>
         <p>{count + 1}</p>
         <button onClick={handleClick}>Click</button>
         {children}
